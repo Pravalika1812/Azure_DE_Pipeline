@@ -1,0 +1,9 @@
+{
+	"name": "data-factory-pp-proj-01",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "747046ee-4c4e-4005-bc96-cf6e4a168c26",
+		"tenantId": "e9b87214-8e8f-4ad0-90ec-9d5c56c94931"
+	}
+}
