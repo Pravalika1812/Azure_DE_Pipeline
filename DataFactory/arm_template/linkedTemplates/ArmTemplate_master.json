@@ -1,0 +1,91 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "factoryName": {
+            "type": "string",
+            "metadata": "Data Factory name",
+            "defaultValue": "data-factory-pp-proj-01"
+        },
+        "AzureDataLakeStorage1_accountKey": {
+            "type": "secureString",
+            "metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+        },
+        "AzureDataLakeStorage1_properties_typeProperties_url": {
+            "type": "string",
+            "defaultValue": "https://ppproj1dlsg2.dfs.core.windows.net/"
+        },
+        "AzureKeyVault1_properties_typeProperties_baseUrl": {
+            "type": "string",
+            "defaultValue": "https://key-vault-pp-proj-01.vault.azure.net/"
+        },
+        "onpremises_sql server_properties_typeProperties_server": {
+            "type": "string",
+            "defaultValue": "localhost\\SQLEXPRESS"
+        },
+        "onpremises_sql server_properties_typeProperties_database": {
+            "type": "string",
+            "defaultValue": "AdventureWorksLT2022"
+        },
+        "onpremises_sql server_properties_typeProperties_userName": {
+            "type": "string",
+            "defaultValue": "pp"
+        },
+        "AzureDatabricks1_properties_typeProperties_existingClusterId": {
+            "type": "string",
+            "defaultValue": "0308-230547-zaok2wzg"
+        },
+        "containerUri": {
+            "type": "string",
+            "metadata": "URI to storage account containing linked ARM templates"
+        },
+        "containerSasToken": {
+            "type": "string",
+            "metadata": "Sas token to storage account containing linked ARM templates"
+        }
+    },
+    "variables": {
+        "factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+    },
+    "resources": [
+        {
+            "name": "data-factory-pp-proj-01_ArmTemplate_0",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2024-03-01",
+            "properties": {
+                "mode": "incremental",
+                "templateLink": {
+                    "uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "factoryName": {
+                        "value": "[parameters('factoryName')]"
+                    },
+                    "AzureDataLakeStorage1_accountKey": {
+                        "value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+                    },
+                    "AzureDataLakeStorage1_properties_typeProperties_url": {
+                        "value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+                    },
+                    "AzureKeyVault1_properties_typeProperties_baseUrl": {
+                        "value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+                    },
+                    "onpremises_sql server_properties_typeProperties_server": {
+                        "value": "[parameters('onpremises_sql server_properties_typeProperties_server')]"
+                    },
+                    "onpremises_sql server_properties_typeProperties_database": {
+                        "value": "[parameters('onpremises_sql server_properties_typeProperties_database')]"
+                    },
+                    "onpremises_sql server_properties_typeProperties_userName": {
+                        "value": "[parameters('onpremises_sql server_properties_typeProperties_userName')]"
+                    },
+                    "AzureDatabricks1_properties_typeProperties_existingClusterId": {
+                        "value": "[parameters('AzureDatabricks1_properties_typeProperties_existingClusterId')]"
+                    }
+                }
+            },
+            "dependsOn": []
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "factoryName": {
+            "value": "data-factory-pp-proj-01"
+        },
+        "AzureDataLakeStorage1_accountKey": {
+            "value": ""
+        },
+        "AzureDataLakeStorage1_properties_typeProperties_url": {
+            "value": "https://ppproj1dlsg2.dfs.core.windows.net/"
+        },
+        "AzureKeyVault1_properties_typeProperties_baseUrl": {
+            "value": "https://key-vault-pp-proj-01.vault.azure.net/"
+        },
+        "onpremises_sql server_properties_typeProperties_server": {
+            "value": "localhost\\SQLEXPRESS"
+        },
+        "onpremises_sql server_properties_typeProperties_database": {
+            "value": "AdventureWorksLT2022"
+        },
+        "onpremises_sql server_properties_typeProperties_userName": {
+            "value": "pp"
+        },
+        "AzureDatabricks1_properties_typeProperties_existingClusterId": {
+            "value": "0308-230547-zaok2wzg"
+        }
+    }
+}
