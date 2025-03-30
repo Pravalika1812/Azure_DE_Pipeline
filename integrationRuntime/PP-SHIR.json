@@ -1,0 +1,7 @@
+{
+	"name": "PP-SHIR",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "used to connect the SQL server"
+	}
+}
