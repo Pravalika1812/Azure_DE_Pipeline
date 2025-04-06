@@ -68,15 +68,3 @@ It showcases **data engineering best practices** like modular pipeline design, s
 
 ---
 
-## 📁 Folder Structure
-
-```bash
-Azure_DE_Pipeline/
-├── DataFactory/               # ADF JSON templates
-├── Databricks_notebooks/      # PySpark Notebooks
-├── Synapse_workspace/         # Synapse artifacts
-├── PowerBI/                   # PBIX dashboard
-├── SQL/                       # .bak files and SQL scripts
-├── Images/                    # Architecture diagram
-├── publish_config.json
-├── README.md
