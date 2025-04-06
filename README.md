@@ -67,4 +67,7 @@ It showcases **data engineering best practices** like modular pipeline design, s
 - ✅ Interactive filters & slicers
 
 ---
+## 📈 Power BI Dashboard Snapshots
 
+![Dashboard1](Images/powerBI_Dashboard1.png)
+![Dashboard2](Images/powerBI_Dashboard2.png)
