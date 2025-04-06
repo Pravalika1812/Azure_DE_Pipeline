@@ -6,7 +6,7 @@ This project demonstrates a complete **end-to-end Data Engineering pipeline** bu
 
 ## 🧠 Project Architecture
 
-![Architecture Diagram](Images/project-architecture.png)
+![Architecture Diagram](Images/Project_architecture.png)
 
 This pipeline follows the modern **Medallion Architecture** approach:
 
